@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:MyViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:custom="clr-namespace:uWatch;" 
+    x:Class="uWatch.InventoryViewCell">
+    <ViewCell.View>
+        <StackLayout Padding="15,5,5,5" Orientation="Horizontal">
+           <Label x:Name="lblroomname" Text="{Binding RoomName}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="18" TextColor="Black" FontAttributes="Bold" />
+           <custom:BorderLessButton x:Name="imgedit" Clicked="imgedit_Tapped" Text="{Binding RoomName}" HeightRequest="40" WidthRequest="60" TextColor="Transparent" BackgroundColor="Transparent" Image="edit.png" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+        </StackLayout>
+    </ViewCell.View>
+</custom:MyViewCell>

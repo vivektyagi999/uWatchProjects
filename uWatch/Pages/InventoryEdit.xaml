@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="uWatch.InventoryEdit">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="50,50,50,0" Spacing="50">
+            <Entry x:Name="nameEntry" Placeholder="Name" VerticalOptions="StartAndExpand" PlaceholderColor="Gray" />
+            <Button x:Name="btnUpdate" Clicked="btnUpdate_Clicked" Text="Update" VerticalOptions="StartAndExpand" BackgroundColor="Red" TextColor="White" BorderRadius="0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

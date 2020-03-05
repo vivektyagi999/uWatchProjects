@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:uWatch" x:Class="uWatch.MembersListPage">
+	<ContentPage.Content>
+		<controls:CustomPopup>
+		<controls:CustomPopup.Content>
+	
+		<controls:InfiniteListView  x:Name="lstView" RowHeight="80">
+			<controls:InfiniteListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding = "5">
+						<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing ="5" Padding = "5">
+							<StackLayout Orientation="Vertical" >
+								<Label Text = "{Binding FullName , StringFormat='#{0}'}" TextColor = "Black" FontSize="18" FontAttributes = "Bold" />
+								</StackLayout>
+							
+								<StackLayout Orientation="Vertical" Spacing="0" >
+								<Label Text = "{Binding FriendlyName, StringFormat='Friendly Name: {0}'}" FontSize="13" TextColor = "Gray"/>
+								<Label Text = "{Binding ZipCode,StringFormat='Zip Code: {0}'}" FontSize="13" TextColor = "Gray" />
+							</StackLayout>
+							
+
+						</StackLayout>
+							<Image Source ="right_arrow1.png" HorizontalOptions = "EndAndExpand" VerticalOptions = "CenterAndExpand" />
+							</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</controls:InfiniteListView.ItemTemplate>
+		</controls:InfiniteListView>
+				</controls:CustomPopup.Content>
+		    	</controls:CustomPopup>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:custom="clr-namespace:uWatch" 
+    x:Class="uWatch.Inventory" 
+    Title="Inventory">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="Add_Clicked" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <custom:InfiniteListView x:Name="intentorylist" ItemTapped="intentorylist_ItemTapped" HasUnevenRows="true" IsVisible="{Binding isInventoryavilable}" ItemsSource="{Binding InventoryList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                       <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="15,5,5,5" Orientation="Horizontal">
+                                <Label x:Name="lblRoomID" Text="{Binding RoomID}" IsVisible="false"  />
+                                    <Label x:Name="lblroomname" Text="{Binding RoomName}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="18" TextColor="Black" FontAttributes="Bold" />
+                                    <custom:BorderLessButton x:Name="imgedit" Clicked="imgedit_Tapped" Text="{Binding RoomNameNID}" HeightRequest="40" WidthRequest="60" TextColor="Transparent" BackgroundColor="Transparent" Image="edit.png" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                       <!-- <custom:InventoryViewCell />-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </custom:InfiniteListView>
+            <Label IsVisible="{Binding isMessage}" Text="{Binding MessageText}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Vertical" IsVisible="{Binding isLoading}">
+                <ActivityIndicator Color="Red" IsRunning="true" IsVisible="{Binding isLoading}" HeightRequest="30" WidthRequest="30" />
+                <Label IsVisible="{Binding isLoading}" Text="Loading Inventory!" FontSize="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

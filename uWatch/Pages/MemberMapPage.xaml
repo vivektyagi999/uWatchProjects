@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:uWatch" 
+    x:Class="uWatch.MemberMapPage"
+             Title="Member Map">
+	<ContentPage.Content>
+		<!--<StackLayout VerticalOptions="FillAndExpand" BackgroundColor = "Green">
+        <Map
+            x:Name="MyMap"
+            IsShowingUser="true"
+            MapType="Satellite"/>
+    </StackLayout>-->
+	</ContentPage.Content>
+</ContentPage>

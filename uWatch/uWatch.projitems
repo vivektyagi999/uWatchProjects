@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{1C71A34D-14CD-4A0E-97E8-B92F2657344C}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>uWatch</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)uWatch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\DeviceListCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DashboardViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\DeviceDetails.xaml.cs">
+      <DependentUpon>DeviceDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\InfiniteListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DeviceDetailsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AlertsListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TakePictureViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AssetsPage.xaml.cs">
+      <DependentUpon>AssetsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\DevicesPage.xaml.cs">
+      <DependentUpon>DevicesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AlertListPage.xaml.cs">
+      <DependentUpon>AlertListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\AlertListCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AlertDetailsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AlertsMap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CircleView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AssetDetails.xaml.cs">
+      <DependentUpon>AssetDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AssetDetailsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\AssetListViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\EscalateAlert.xaml.cs">
+      <DependentUpon>EscalateAlert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EscalateAlertViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ImageGallery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\GalleryDevices.xaml.cs">
+      <DependentUpon>GalleryDevices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PinchToZoomContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DoubleExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\FotgotPage.cs">
+      <DependentUpon>ForgotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UserInstructionsView\HelpAndSupportPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserInstructionsView\PageNavigation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserInstructionsView\GlossaryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\NewAssetsDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\NewTakePicturePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MessegeListPage.xaml.cs">
+      <DependentUpon>MessegeListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AlertDetailsAction.xaml.cs">
+      <DependentUpon>AlertDetailsAction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ZoomPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\MessegesListInboxCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MessageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MembersListPage.xaml.cs">
+      <DependentUpon>MembersListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MemberViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MemberMapPage.xaml.cs">
+      <DependentUpon>MemberMapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EscalatedAlertViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AlertDetailsForAgentold.xaml.cs">
+      <DependentUpon>AlertDetailsForAgentold.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\IAndroidMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AlertDetailsForAgent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AlertDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomPin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Bluetoothlist.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BluetoothlistViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\MessegesListSentBoxCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomDatePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomPicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\BluetoothDeviceListPage.xaml.cs">
+      <DependentUpon>BluetoothDeviceListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UserInstructionsView\ConfigrationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserInstructionsView\UserGuide.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\HtmlLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserInstructionsView\DetailsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\ExtendedSwitch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomTextView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\ExpandableView.xaml.cs">
+      <DependentUpon>ExpandableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PopupPage\DeviceDetailPage.xaml.cs">
+      <DependentUpon>DeviceDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\BatchAlertGallery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\StringCaseConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DeviceDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\DraftListPage.xaml.cs">
+      <DependentUpon>DraftListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PopupPage\AddNewImagePopUp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\MessageDraftListCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ICurrentLocation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\RoundedButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListOfUsersViewmodel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CustomPopupControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IMail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IMMS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\INetworConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IPhoto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IPicture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ISendMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\KeywordValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Inventory.xaml.cs">
+      <DependentUpon>Inventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\InventoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\MyViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\InventoryViewCell.xaml.cs">
+      <DependentUpon>InventoryViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Gallerylayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OrderImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\InventoryDetails.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\RoomDetailsCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\InventoryEdit.xaml.cs">
+      <DependentUpon>InventoryEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BorderLessButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MasterPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\EventArgsHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\EventExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\BindableObjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\ConfigrationViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AlertImagePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\NullableDatePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ICameraGallery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IPushNotificationClear.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DeviceHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\RightSwipeViewCell.xaml.cs">
+      <DependentUpon>RightSwipeViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\DeleteContextActionView.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ICustomContextActionsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopupPage\CustomConfirmPage.xaml.cs">
+      <DependentUpon>CustomConfirmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\ExtendedEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\CompleteRegistrationPage.xaml.cs">
+      <DependentUpon>CompleteRegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToValueConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\RegistrationUpdatePage.xaml.cs">
+      <DependentUpon>RegistrationUpdatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationUpdateViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\DatePickerWithIcon.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FontAwesome.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ResetPasswordPage.xaml.cs">
+      <DependentUpon>ResetPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToImageConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\NoKeyBoardEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomConfirmPopUp.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopupPage\AddMacAddressPopUp.xaml.cs">
+      <DependentUpon>AddMacAddressPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PopupPage\AddCubeConfigurationPopUp.xaml.cs">
+      <DependentUpon>AddCubeConfigurationPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AddCubeConfigViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\AssetImageListCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PlatformHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\PreviewGalleryViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListViewCells\PreviewGallery.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\MultiLineButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PopupPage\LinkTagsPopUp.xaml.cs">
+      <DependentUpon>LinkTagsPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LinkTagsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ParentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\EscalatePopUp.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoadingScreenPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\DeviceDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\AssetsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\Dashboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\DevicesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\AlertListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\AssetDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\EscalateAlert.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\GalleryDevices.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\ForgotPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MessegeListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\AlertDetailsAction.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MembersListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MemberMapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\AlertDetailsForAgentold.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\BluetoothDeviceListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CustomControls\ExpandableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopupPage\DeviceDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\DraftListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\Inventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListViewCells\InventoryViewCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\InventoryEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListViewCells\RightSwipeViewCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CustomControls\DeleteContextActionView.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopupPage\CustomConfirmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\CompleteRegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\RegistrationUpdatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CustomControls\DatePickerWithIcon.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\ResetPasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CustomControls\CustomConfirmPopUp.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopupPage\AddMacAddressPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopupPage\AddCubeConfigurationPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListViewCells\PreviewGallery.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PopupPage\LinkTagsPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\EscalatePopUp.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ListViewCells\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)UserInstructionsView\" />
+    <Folder Include="$(MSBuildThisFileDirectory)CustomControls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)PopupPage\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Converters\" />
+    <Folder Include="$(MSBuildThisFileDirectory)AppResources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)AppResources\AppResources.resx" />
+  </ItemGroup>
+</Project>

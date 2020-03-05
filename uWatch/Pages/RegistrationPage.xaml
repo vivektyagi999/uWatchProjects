@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:custom="clr-namespace:uWatch;" x:Class="uWatch.RegistrationPage" Title="New User Registration">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <custom:BoolToValueConverter x:Key="boolToValue" />
+            <custom:BoolToColorConverter x:Key="boolToColor" TrueColor="Transparent" FalseColor="#ddd" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="0,15,0,15" RowSpacing="5" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <BoxView HeightRequest="4" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red" />
+            <StackLayout Padding="0,10,0,10" Grid.Row="1" Grid.Column="0" Spacing="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image x:Name="imglogo" Source="uwatch_logo.png" HeightRequest="120" WidthRequest="120" />
+                <Label Text="New User Registration" FontSize="18" HorizontalOptions="Center" TextColor="Black" />
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="0" Padding="30,10,30,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Entry Text="{Binding AccessCode}" IsEnabled="{Binding IsAccessKey}" x:Name="entryAccessKey" BackgroundColor="{Binding IsAccessKey,Converter={StaticResource boolToColor}}" Placeholder="Access key" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                <Label Text="Or" FontSize="18" Margin="0,5,0,5" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" />
+                <Entry Text="{Binding ProductCode}" x:Name="entryProductCode" IsEnabled="{Binding IsProductKey}" BackgroundColor="{Binding IsProductKey,Converter={StaticResource boolToColor}}" Placeholder="Product Code" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                <Entry Text="{Binding SerialNumber}" x:Name="entrySerialNumber" IsEnabled="{Binding IsProductKey}" BackgroundColor="{Binding IsProductKey,Converter={StaticResource boolToColor}}" Placeholder="Serial Number" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+<!--                <Label Text="{Binding WarningText}" x:Name="lblWarning" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" FontSize="14" TextColor="Red" />
+-->            </StackLayout>
+            <Grid Padding="20" Grid.Row="3" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Button Command="{Binding NextCommand}" Grid.Row="0" Grid.Column="0" Text="Next" TextColor="White" FontSize="16" BackgroundColor="Red" HorizontalOptions="FillAndExpand" />
+                <Button Command="{Binding CancelCommand}" Text=" Cancel " Grid.Row="1" Grid.Column="0" TextColor="White" FontSize="16" BackgroundColor="Red" HorizontalOptions="FillAndExpand" />
+            </Grid>
+            <BoxView HeightRequest="4" Grid.Row="4" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,573 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.3.4.0.1008975\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.3.4.0.1008975\build\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{8F3009EE-39FC-4FAF-92C3-F3B6F5A17DB7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>uWatch.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>uWatch.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>false</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchI18n></MtouchI18n>
+    <CodesignProvision>uWatchProvisioningProfile</CodesignProvision>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements></CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <CodesignProvision>uWatchDistribution</CodesignProvision>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignProvision>uWatchProvisioningProfile</CodesignProvision>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements></CodesignEntitlements>
+    <MtouchProfiling>false</MtouchProfiling>
+    <CodesignKey>iPhone Developer: Norman Guiver (47LMZP4RLC)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <IpaPackageName></IpaPackageName>
+    <MtouchI18n></MtouchI18n>
+    <CodesignProvision>uWatchProvisioningProfile</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+<MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Xamarin.Mobile">
+      <HintPath>..\Components\xamarin.mobile-0.7.7\lib\ios-unified\Xamarin.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="BluetoothLE.Core">
+      <HintPath>..\packages\XamarinBluetoothLE.1.0.0\lib\Xamarin.iOS10\BluetoothLE.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BluetoothLE.iOS">
+      <HintPath>..\packages\XamarinBluetoothLE.1.0.0\lib\Xamarin.iOS10\BluetoothLE.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.BLE.Abstractions">
+      <HintPath>..\packages\Plugin.BLE.1.3.0\lib\Xamarin.iOS10\Plugin.BLE.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.3\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.3.0.1\lib\Xamarin.iOS10\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.3.0.1\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Messaging.4.0.0\lib\Xamarin.iOS10\Plugin.Messaging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Messaging">
+      <HintPath>..\packages\Xam.Plugins.Messaging.4.0.0\lib\Xamarin.iOS10\Plugin.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.0.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.0.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.9\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Calabash">
+      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.20.6\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+    </Reference>
+    <Reference Include="Adapt.Presentation.iOS">
+      <HintPath>..\packages\Adapt.Presentation.1.1.0\lib\xamarinios\Adapt.Presentation.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Adapt.Presentation.Standard">
+      <HintPath>..\packages\Adapt.Presentation.1.1.0\lib\xamarinios\Adapt.Presentation.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\packages\Plugin.Permissions.2.0.1\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.2.0.1\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.3.0.4\lib\Xamarin.iOS10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.3.0.4\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.Support.iOS">
+      <HintPath>..\packages\Acr.Support.1.1.1\lib\Xamarin.iOS10\Acr.Support.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.1.6.2\lib\Xamarin.iOS10\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.3\lib\Xamarin.iOS10\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.3\lib\Xamarin.iOS10\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\Acr.UserDialogs.4.1.3\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="ELCImagePicker">
+      <HintPath>..\Components\elcimagepicker-1.4\lib\ios-unified\ELCImagePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.5.0.122203\lib\Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.iOS">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.5.0.122203\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.3.2\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.3.2\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.3.2\lib\Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms">
+      <HintPath>..\packages\ZXing.Net.Mobile.Forms.2.3.2\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms.iOS">
+      <HintPath>..\packages\ZXing.Net.Mobile.Forms.2.3.2\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.DataSource.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.DataSource.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.GridCommon.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.GridCommon.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPullToRefresh.XForms.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPullToRefresh.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfPullToRefresh.XForms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPullToRefresh.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPullToRefresh.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfPullToRefresh.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1008975\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1008975\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1008975\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.3.4.0.1008975\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup">
+      <HintPath>..\packages\Rg.Plugins.Popup.1.1.5.180\lib\Xamarin.IOS\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.IOS">
+      <HintPath>..\packages\Rg.Plugins.Popup.1.1.5.180\lib\Xamarin.IOS\Rg.Plugins.Popup.IOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Multilingual.Abstractions">
+      <HintPath>..\packages\Plugin.Multilingual.1.0.2\lib\Xamarin.iOS10\Plugin.Multilingual.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Multilingual">
+      <HintPath>..\packages\Plugin.Multilingual.1.0.2\lib\Xamarin.iOS10\Plugin.Multilingual.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.BLE">
+      <HintPath>..\packages\Plugin.BLE.1.3.0\lib\Xamarin.iOS10\Plugin.BLE.dll</HintPath>
+    </Reference>
+    <Reference Include="PanCardView">
+      <HintPath>..\packages\CardsView.1.4.1\lib\Xamarin.iOS10\PanCardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\packages\Xamarin.Essentials.1.3.0\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK-1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-60%403x.png" />
+    <BundleResource Include="Resources\Icon-Small%403x.png" />
+    <BundleResource Include="Resources\logoHeader.png" />
+    <BundleResource Include="Resources\backNewArrow.png" />
+    <BundleResource Include="Resources\icon_cellstrength.png" />
+    <BundleResource Include="Resources\icon_motion.png" />
+    <BundleResource Include="Resources\icon_pir.png" />
+    <BundleResource Include="Resources\red_line.png" />
+    <BundleResource Include="Resources\uwatch_logo.png" />
+    <BundleResource Include="Resources\red_line%402x.png" />
+    <BundleResource Include="Resources\red_line%403x.png" />
+    <BundleResource Include="Resources\Default1.png" />
+    <BundleResource Include="Resources\arrow.png" />
+    <BundleResource Include="Resources\but.png" />
+    <BundleResource Include="Resources\edit.png" />
+    <BundleResource Include="Resources\more.png" />
+    <BundleResource Include="Resources\top_bg.png" />
+    <BundleResource Include="Resources\side_menu_bg.png" />
+    <BundleResource Include="Resources\moniter.png" />
+    <BundleResource Include="Resources\moniter%402x.png" />
+    <BundleResource Include="Resources\moniter%403x.png" />
+    <BundleResource Include="Resources\setting.png" />
+    <BundleResource Include="Resources\setting%402x.png" />
+    <BundleResource Include="Resources\setting%403x.png" />
+    <BundleResource Include="Resources\alert.png" />
+    <BundleResource Include="Resources\alert%402x.png" />
+    <BundleResource Include="Resources\alert%403x.png" />
+    <BundleResource Include="Resources\pos.png" />
+    <BundleResource Include="Resources\pos%402x.png" />
+    <BundleResource Include="Resources\pos%403x.png" />
+    <BundleResource Include="Resources\menu%401x.png" />
+    <BundleResource Include="Resources\menu%402x.png" />
+    <BundleResource Include="Resources\side_menu_bg1.png" />
+    <BundleResource Include="Resources\left_moniter.png" />
+    <BundleResource Include="Resources\left_moniter%402x.png" />
+    <BundleResource Include="Resources\left_moniter%403x.png" />
+    <BundleResource Include="Resources\left_setting.png" />
+    <BundleResource Include="Resources\left_setting%402x.png" />
+    <BundleResource Include="Resources\left_setting%403x.png" />
+    <BundleResource Include="Resources\left_alert.png" />
+    <BundleResource Include="Resources\left_alert%402x.png" />
+    <BundleResource Include="Resources\left_alert%403x.png" />
+    <BundleResource Include="Resources\left_pos.png" />
+    <BundleResource Include="Resources\left_pos%402x.png" />
+    <BundleResource Include="Resources\left_pos%403x.png" />
+    <BundleResource Include="Resources\right_arrow1.png" />
+    <BundleResource Include="Resources\signal2%401x.png" />
+    <BundleResource Include="Resources\signal3%401x.png" />
+    <BundleResource Include="Resources\signal0%401x.png" />
+    <BundleResource Include="Resources\signal1%401x.png" />
+    <BundleResource Include="Resources\logout%403x.png" />
+    <BundleResource Include="Resources\logout%402x.png" />
+    <BundleResource Include="Resources\logout.png" />
+    <BundleResource Include="Resources\CheckBoxTick.png" />
+    <BundleResource Include="Resources\Checkbox.png" />
+    <BundleResource Include="Resources\red_line~ipad.png" />
+    <BundleResource Include="Resources\close.png" />
+    <BundleResource Include="Resources\close%402x.png" />
+    <BundleResource Include="Resources\close%403x.png" />
+    <BundleResource Include="Resources\rotate_left.png" />
+    <BundleResource Include="Resources\rotate_right.png" />
+    <BundleResource Include="Resources\heartbeat.png" />
+    <BundleResource Include="Resources\picture.png" />
+    <BundleResource Include="Resources\pir.png" />
+    <BundleResource Include="Resources\poweroff.png" />
+    <BundleResource Include="Resources\shock.png" />
+    <BundleResource Include="Resources\temperature3.png" />
+    <BundleResource Include="Resources\temperature2.png" />
+    <BundleResource Include="Resources\temperature1.png" />
+    <BundleResource Include="Resources\temperature0.png" />
+    <BundleResource Include="Resources\signal0.png" />
+    <BundleResource Include="Resources\signal1.png" />
+    <BundleResource Include="Resources\signal2.png" />
+    <BundleResource Include="Resources\signal3.png" />
+    <BundleResource Include="Resources\battery0.png" />
+    <BundleResource Include="Resources\battery1.png" />
+    <BundleResource Include="Resources\battery2.png" />
+    <BundleResource Include="Resources\battery3.png" />
+    <BundleResource Include="Resources\alertTitle.png" />
+    <BundleResource Include="Resources\gray_line.png" />
+    <BundleResource Include="Resources\force.png" />
+    <BundleResource Include="Resources\battery0_1.png" />
+    <BundleResource Include="Resources\power.png" />
+    <BundleResource Include="Resources\tem.png" />
+    <BundleResource Include="Resources\sms-received1.mp3" />
+    <BundleResource Include="Resources\noimage.gif" />
+    <BundleResource Include="Resources\spy_icon.png" />
+    <BundleResource Include="Resources\right_arrow.png" />
+    <BundleResource Include="Resources\alert_bg.png" />
+    <BundleResource Include="Resources\alert_i.png" />
+    <BundleResource Include="Resources\alert_Name.png" />
+    <BundleResource Include="Resources\Escalate.png" />
+    <BundleResource Include="Resources\Greenarrow.png" />
+    <BundleResource Include="Resources\menu.png" />
+    <BundleResource Include="Resources\Redarrow.png" />
+    <BundleResource Include="Resources\blankcard.jpg" />
+    <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\stalite.png" />
+    <BundleResource Include="Resources\tower.png" />
+    <BundleResource Include="Resources\nogps.gif" />
+    <BundleResource Include="Resources\left_help%403x.png" />
+    <BundleResource Include="Resources\left_help.png" />
+    <BundleResource Include="Resources\left_help%402x.png" />
+    <BundleResource Include="Resources\comingSoonImage.png" />
+    <BundleResource Include="Resources\comingSoon.png" />
+    <BundleResource Include="Resources\TroubleShootings.png" />
+    <BundleResource Include="Resources\Navigations.png" />
+    <BundleResource Include="Resources\Configs.png" />
+    <BundleResource Include="Resources\Glossarys.png" />
+    <BundleResource Include="Resources\InstructionsScreen.jpg" />
+    <BundleResource Include="Resources\Instructions.jpg" />
+    <BundleResource Include="Resources\UserInstruction.jpg" />
+    <BundleResource Include="Resources\blue.png" />
+    <BundleResource Include="Resources\CrossImage.png" />
+    <BundleResource Include="Resources\CloseIcon.png" />
+    <BundleResource Include="Resources\map.png" />
+    <BundleResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\SplashScreen.png" />
+    <BundleResource Include="Resources\Skellig.jpg" />
+    <BundleResource Include="Resources\iconOnLoading.png" />
+    <BundleResource Include="Resources\addbtnUwatch.png" />
+    <BundleResource Include="Resources\radiobtn.png" />
+    <BundleResource Include="Resources\radiobtnTicked.png" />
+    <BundleResource Include="Resources\call.png" />
+    <BundleResource Include="Resources\email.png" />
+    <BundleResource Include="Resources\sms.png" />
+    <BundleResource Include="Resources\batch.png" />
+    <BundleResource Include="Resources\logoutNewIcon.png" />
+    <BundleResource Include="Resources\messagesNewIcon.png" />
+    <BundleResource Include="Resources\bluetoothicon.png" />
+    <BundleResource Include="Resources\reload.png" />
+    <BundleResource Include="Resources\Bluetooth_alt.png" />
+    <BundleResource Include="Resources\uWatchTone.mp3" />
+    <BundleResource Include="Resources\calendarimage.png" />
+    <BundleResource Include="Resources\configration.png" />
+    <BundleResource Include="Resources\usermanual.png" />
+    <BundleResource Include="Resources\test_site.png" />
+    <BundleResource Include="Resources\off.png" />
+    <BundleResource Include="Resources\on.png" />
+    <BundleResource Include="Resources\white.png" />
+    <BundleResource Include="Resources\MenuNav.png" />
+    <BundleResource Include="Resources\MessageNav.png" />
+    <BundleResource Include="Resources\AssetsNav.png" />
+    <BundleResource Include="Resources\AlertNav.png" />
+    <BundleResource Include="Resources\DeviceNav.png" />
+    <BundleResource Include="Resources\escalatedalert.png" />
+    <BundleResource Include="Resources\messages.png" />
+    <BundleResource Include="Resources\No.png" />
+    <BundleResource Include="Resources\Yes.png" />
+    <BundleResource Include="Resources\member.png" />
+    <BundleResource Include="Resources\ConfigNew.png" />
+    <BundleResource Include="Resources\Drafts.png" />
+    <BundleResource Include="Resources\devicepage.png" />
+    <BundleResource Include="Resources\memberpage.png" />
+    <BundleResource Include="Resources\menupage.png" />
+    <BundleResource Include="Resources\alertpage.png" />
+    <BundleResource Include="Resources\ImageNotRequired.png" />
+    <BundleResource Include="Resources\cameradisabled.png" />
+    <BundleResource Include="Resources\camerafailed.png" />
+    <BundleResource Include="Resources\gpsdisabled.png" />
+    <BundleResource Include="Resources\no_GPS.png" />
+    <BundleResource Include="Resources\invent.png" />
+    <BundleResource Include="Images\RadioButton\checked.png" />
+    <BundleResource Include="Images\RadioButton\checked%402x.png" />
+    <BundleResource Include="Images\RadioButton\unchecked.png" />
+    <BundleResource Include="Images\RadioButton\unchecked%402x.png" />
+    <BundleResource Include="Resources\uwatchlogo.png" />
+    <BundleResource Include="Resources\left_arrow.png" />
+    <BundleResource Include="Resources\barcode.png" />
+    <BundleResource Include="Resources\delete.png" />
+    <BundleResource Include="Resources\fontawesome-webfont.eot" />
+    <BundleResource Include="Resources\fontawesome-webfont.ttf" />
+    <BundleResource Include="Resources\fontawesome-webfont.woff" />
+    <BundleResource Include="Resources\fontawesome-webfont.woff2" />
+    <BundleResource Include="Resources\FontAwesome.otf" />
+    <BundleResource Include="Resources\success.png" />
+    <BundleResource Include="Resources\coming_soon.png" />
+    <BundleResource Include="Resources\hidepass.png" />
+    <BundleResource Include="Resources\showeye.png" />
+    <BundleResource Include="Resources\bluetoothtext.png" />
+    <BundleResource Include="Resources\Battery_Empty.png" />
+    <BundleResource Include="Resources\lowbattery30.png" />
+    <BundleResource Include="Resources\NoPower.png" />
+    <BundleResource Include="Resources\menuHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="Sound\uWatchTone.mp3" />
+    <None Include="Sound\uWatchTone.wav" />
+    <None Include="Resources\uWatchTone.wav" />
+    <None Include="Helpers\TranslateExtension.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Helpers\Camera.cs" />
+    <Compile Include="Picture.cs" />
+    <Compile Include="PhotoImplementation.cs" />
+    <Compile Include="Helpers\NetworkConnection.cs" />
+    <Compile Include="Helpers\SendMessageImplimenation.cs" />
+    <Compile Include="Renders\AlertMapRenderer.cs" />
+    <Compile Include="Renders\CircleViewRenderer.cs" />
+    <Compile Include="Renders\ExtendedEntryRenderer.cs" />
+    <Compile Include="Renders\ExtendedEditorRenderer.cs" />
+    <Compile Include="Renders\BaseUrl_iOS.cs" />
+    <Compile Include="Renders\CustomWebViewRenderer.cs" />
+    <Compile Include="Helpers\MMS_iOS.cs" />
+    <Compile Include="Helpers\MessagingExtension.cs" />
+    <Compile Include="Helpers\Mail_iOS.cs" />
+    <Compile Include="Renders\CalenderDatePickerRenderer.cs" />
+    <Compile Include="Renders\MyViewCellRenderer.cs" />
+    <Compile Include="Bluetooth\Adapter.cs" />
+    <Compile Include="Bluetooth\Characteristic.cs" />
+    <Compile Include="Bluetooth\Device.cs" />
+    <Compile Include="Bluetooth\Service.cs" />
+    <Compile Include="Renders\HtmlLabelRenderer.cs" />
+    <Compile Include="Renders\ExtendedSwitchRenderer.cs" />
+    <Compile Include="Renders\TextViewRenderer.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="LocationServices\LocationManager.cs" />
+    <Compile Include="LocationServices\LocationUpdatedEventArgs.cs" />
+    <Compile Include="Helpers\CurrentLocation.cs" />
+    <Compile Include="Renders\InfiniteListViewRendrer.cs" />
+    <Compile Include="Renders\NullableDatePickerRenderer.cs" />
+    <Compile Include="Helpers\CameraGallery.cs" />
+    <Compile Include="Helpers\PushNotificationClear.cs" />
+    <Compile Include="Helpers\CustomContextActionsManager.cs" />
+    <Compile Include="Renders\PickerRenderer.cs" />
+    <Compile Include="Renders\NoKeyBoardEntryRenderer.cs" />
+    <Compile Include="Renders\MultiLineButtonRenderer.cs" />
+    <Compile Include="Renders\NavigationPageRenderer.cs" />
+    <Compile Include="Renders\CustomPageRenderer.cs" />
+  </ItemGroup>
+  <Import Project="..\uWatch\uWatch.projitems" Label="Shared" Condition="Exists('..\uWatch\uWatch.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\UwatchPCL\UwatchPCL.csproj">
+      <Project>{FB98A399-A3FB-4C73-9814-64F58769F870}</Project>
+      <Name>UwatchPCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renders\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Bluetooth\" />
+    <Folder Include="Sound\" />
+    <Folder Include="LocationServices\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="MediaPlugin">
+      <Version>1.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="xamarin.mobile">
+      <Version>0.7.7</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="Xam.Plugins.Messaging">
+      <Version>3.2.1.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="elcimagepicker">
+      <Version>1.4</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\100.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\320x480.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x960.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1242x2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\750x1334.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\2208x1242.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1024.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2048.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1024x768.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\2048x1496.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1004.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2008.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\2048x1536.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1024x748.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\uwatch_logo1024.png" />
+  </ItemGroup>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.3.4.0.1008975\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.4.0.1008975\build\Xamarin.Forms.targets')" />
+</Project>

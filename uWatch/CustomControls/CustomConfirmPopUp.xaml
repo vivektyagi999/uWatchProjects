@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="uWatch.CustomConfirmPopUp">
+    <ContentView.Content>
+        <Frame x:Name="framePopUp" HorizontalOptions="CenterAndExpand" Padding="5" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+            <StackLayout Padding="5" Spacing="12">
+                <Label x:Name="txtTitle" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" />
+                <Label x:Name="txtBodyText" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="19" />
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Button x:Name="btnCancel" Text="Cancel" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" TextColor="Black" FontAttributes="Bold" FontSize="21" VerticalOptions="EndAndExpand" Command="{Binding CancelCommand}" />
+                    <Button x:Name="btnConfirm" Text="Confirm" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" TextColor="Black" FontAttributes="Bold" FontSize="19" VerticalOptions="EndAndExpand" Command="{Binding ConfirmCommand}" />
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

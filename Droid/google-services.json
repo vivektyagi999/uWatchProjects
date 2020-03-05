@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "396090725132",
+    "firebase_url": "https://uwatch-c635c.firebaseio.com",
+    "project_id": "uwatch-c635c",
+    "storage_bucket": "uwatch-c635c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396090725132:android:740b43efc3774927",
+        "android_client_info": {
+          "package_name": "com.uwatch.uwatchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396090725132-76h5d3p0sr2obfsr3h7b3nutvtl6av12.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uwatch.uwatchapp",
+            "certificate_hash": "f6271e87f0c7761d35e48aec4402d46e90437015"
+          }
+        },
+        {
+          "client_id": "396090725132-20eiend37in9f7l5k32afr09igul2qon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH3WU3Lcj1JSWhR6n51mp848LAn2Q4wz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "396090725132-20eiend37in9f7l5k32afr09igul2qon.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:custom="clr-namespace:uWatch;" x:Class="uWatch.RegistrationUpdatePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <custom:BoolToValueConverter x:Key="boolToValue" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid Grid.Row="0" Grid.Column="0" Padding="0,15,0,15" RowSpacing="8" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="7*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+                <BoxView HeightRequest="4" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red" />
+                <StackLayout Padding="0,10,0,10" Grid.Row="1" Grid.Column="0" Spacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image x:Name="imglogo" Source="uwatch_logo.png" HeightRequest="120" BackgroundColor="White" WidthRequest="120" />
+                    <Label Text="User Registration" FontSize="18" Margin="0,20,0,0" HorizontalOptions="Center" TextColor="Black" />
+                </StackLayout>
+                <StackLayout Grid.Row="2" Grid.Column="0" Padding="30,0,30,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="15">
+                    <Entry Text="{Binding FullName}" x:Name="entryFullName" BackgroundColor="Transparent" Placeholder="Full Name" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding EmailAddress}" Keyboard="Email" IsEnabled="{Binding IsAccessKey}" x:Name="entryEmail" BackgroundColor="Transparent" Placeholder="Email Address" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                    <Entry Text="{Binding ConfirmEmailAddress}" Keyboard="Email" IsEnabled="{Binding IsAccessKey}" x:Name="entryConfirmEmail" BackgroundColor="Transparent" Placeholder="Confirm Email Address" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                    <StackLayout HorizontalOptions="FillAndExpand" Spacing="12">
+                        <Label Text="Date Of Birth" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="Black" />
+                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="10" Orientation="Horizontal">
+                            <Picker x:Name="pkrDate" ItemsSource="{Binding PickerDate}" IsVisible="false" SelectedIndex="{Binding SelectedDateIndex}" />
+                            <Picker x:Name="pkrMonth" ItemsSource="{Binding PickerMonth}" IsVisible="false" SelectedIndex="{Binding SelectedMonthIndex}" />
+                            <Picker x:Name="pkrYear" ItemsSource="{Binding PickerYear}" IsVisible="false" SelectedIndex="{Binding SelectedYearIndex}" />
+                            <custom:NoKeyBoardEntry Text="{Binding SelectedDate}" x:Name="entryDate" BackgroundColor="Transparent" Placeholder="Date" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                            <custom:NoKeyBoardEntry Text="{Binding SelectedMonth}" x:Name="entryMonth" BackgroundColor="Transparent" Placeholder="Month" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                            <custom:NoKeyBoardEntry Text="{Binding SelectedYear}" x:Name="entryYear" BackgroundColor="Transparent" Placeholder="Year" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <Grid Padding="30,0,30,0" Grid.Row="3" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Button Command="{Binding NextCommand}" Grid.Row="0" Grid.Column="0" Text="Submit" TextColor="White" FontSize="16" BackgroundColor="Red" HorizontalOptions="FillAndExpand" />
+                    <Button Command="{Binding CancelRegistrationCommand}" Text=" Cancel " Grid.Row="1" Grid.Column="0" TextColor="White" FontSize="16" BackgroundColor="Red" HorizontalOptions="FillAndExpand" />
+                </Grid>
+                <BoxView HeightRequest="4" Grid.Row="4" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red"/>
+            </Grid>
+            <custom:CustomConfirmPopUp Grid.Row="0" Grid.Column="0" Padding="20" IsVisible="{Binding IsConfirmPopUp}" BodyText="Do you have a tag?" HorizontalOptions="FillAndExpand" BackgroundColor="#A6000000" VerticalOptions="FillAndExpand"/>
+            <ContentView Grid.Row="0" Grid.Column="0" Padding="20" IsVisible="{Binding IsSuccess}" HorizontalOptions="FillAndExpand" BackgroundColor="#A6000000" VerticalOptions="FillAndExpand">
+                <Frame x:Name="framePopUp" HorizontalOptions="FillAndExpand" Padding="0" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                    <StackLayout Padding="15" Spacing="15">
+                        <Label x:Name="txtBodyText" Text="Thank you for registering with us.&#xA; Confirmation of your credentials has been sent to your email." HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18" FontAttributes="Bold" />
+                        <Button x:Name="btnConfirm" Text="Login" BackgroundColor="Red" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Command="{Binding ConfirmMessageCommand}" />
+                    </StackLayout>
+                </Frame>
+            </ContentView>
+            <ContentView BackgroundColor="#A6000000" Padding="20" Grid.Row="0" Grid.Column="0" IsVisible="{Binding IsMacAddress}">
+                <Frame HorizontalOptions="FillAndExpand" Padding="5,15,5,15" CornerRadius="6" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                    <StackLayout Padding="10" Spacing="12">
+                       <custom:ExtendedEntry Text="{Binding MacAddress}" x:Name="entryMacAddress" HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Placeholder="Enter MAC Address" />
+                        <StackLayout>
+                            <Button Text="Save " Command="{Binding ConfirmMacCommand}" TextColor="White" FontSize="20" FontAttributes="Bold" BackgroundColor="Red" HorizontalOptions="FillAndExpand" />
+                            <Button Text="Cancel" Command="{Binding CloseMacCommand}" TextColor="White" FontSize="21" FontAttributes="Bold" BackgroundColor="Red" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ContentView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

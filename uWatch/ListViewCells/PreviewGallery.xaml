@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:uWatch;" x:Class="uWatch.PreviewGallery">
+    <ContentView.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" Spacing="1" x:Name="imgStack">
+                <local:CustomWebView x:Name="imgWebView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

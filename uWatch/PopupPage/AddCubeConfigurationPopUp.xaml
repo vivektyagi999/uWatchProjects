@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:custom="clr-namespace:uWatch;" x:Class="uWatch.AddCubeConfigurationPopUp">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation PositionIn="Bottom" PositionOut="Bottom" ScaleIn="1.2" ScaleOut="0.8" DurationIn="400" DurationOut="300" EasingIn="SinOut" EasingOut="SinIn" HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <custom:BoolToColorConverter x:Key="boolToColor" TrueColor="#B78DE1" FalseColor="Transparent"/>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <ContentPage.Content>
+    </ContentPage.Content>
+    <ScrollView x:Name="sv" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+        <Frame HorizontalOptions="FillAndExpand" Padding="10,15,10,15" CornerRadius="6" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+            <StackLayout Spacing="10">
+                <Frame BackgroundColor="Red" Padding="8" HasShadow="false" CornerRadius="6">
+                    <Label Text="Initial Cube Configuration" FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+                </Frame>
+                <Label Text="Select from this list" FontSize="Small" Margin="10,10,0,0" />
+                <custom:InfiniteListView x:Name="listCube" ItemsSource="{Binding ListCubeConfig}" HasUnevenRows="true" HeightRequest="80" >
+                    <custom:InfiniteListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout HorizontalOptions="FillAndExpand"  Padding="10,5,0,5">
+                                        <Label Text="{Binding Text}" FontSize="Medium" TextColor="Black" HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </custom:InfiniteListView.ItemTemplate>
+                </custom:InfiniteListView>
+                <!--           <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Spacing="0">
+                    <Picker x:Name="pkrCubeConfig" ItemsSource="{Binding PickerCubeConfig}" IsVisible="false" SelectedIndex="{Binding SelectedCubeConfigIndex}" />
+                    <Label Text="{Binding SelectedCubeConfig}" x:Name="lblCubeConfig" FontSize="Medium"  HorizontalOptions="FillAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Tapped" NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Gray"/>
+                  <custom:NoKeyBoardEntry Text="{Binding SelectedCubeConfig}" x:Name="entryCubeConfig" BackgroundColor="Green" Placeholder="Select Default Configuration" HeightRequest="40" PlaceholderColor="Gray" HorizontalOptions="FillAndExpand" />
+-->
+                <!--      </StackLayout>-->
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Button Text="Confirm " TextColor="White" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Red" HorizontalOptions="FillAndExpand" Clicked="ConfirmClickedAsync" />
+                    <!--                    <Button Text="Cancel" TextColor="White" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Red" HorizontalOptions="FillAndExpand" Clicked="CancelClickedAsync" />
+-->
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</pages:PopupPage>

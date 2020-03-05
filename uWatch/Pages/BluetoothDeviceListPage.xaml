@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="uWatch.BluetoothDeviceListPage">
+	<ContentPage.Content>
+	<StackLayout x:Name="layoutble">
+			<Label x:Name="lblNodevice" FontSize="15" Text="No uWatch BLE Device Found" IsVisible="false" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+		<ListView x:Name="deviceListView" RowHeight="80">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+			       <!--<TextCell Text="{Binding Name}" Detail="{Binding Rssi, StringFormat = 'Signal Strength(RSSI): {0}'}" />-->
+						<ViewCell>
+						  <ViewCell.View>
+						   <StackLayout Padding="10,10,10,10">
+							  <Label x:Name="devicename" Text="{Binding Name}" FontSize="22" TextColor="#666" FontAttributes="Bold" />
+						      <Label x:Name="rssivalue" Text="{Binding Rssi, StringFormat = 'Signal Strength(RSSI): {0}'}" FontSize="18" TextColor="#666" />
+							</StackLayout>
+						  </ViewCell.View>
+						</ViewCell>
+					
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
